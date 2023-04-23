@@ -70,6 +70,7 @@
       </v-sheet>
     </div>
   </div>
+
 </template>
 
 <script lang="ts" setup>
@@ -78,6 +79,7 @@ import format from "date-fns/format"
 import { reactive } from 'vue';
 import { ref } from 'vue';
 import { Ref } from 'vue';
+import alertSound from "@/assets/alert.mp3"
 
 interface Report {
   iteration: number,
@@ -91,7 +93,7 @@ interface Report {
 const PLANNING_TIME = 2 * 60
 const FOCUS_TIME = 20 * 60
 const REVIEW_TIME = 3 * 60
-const BREAK_TIME = 5 * 60
+const BREAK_TIME = 5
 
 // FIXME: 内部状態であるstatusと、ユーザーに見せるものとしてのstatusは分けるべき
 const status: Ref<"Planning" | "Focus" | "Review" | "Break"> = ref("Planning")
@@ -109,6 +111,10 @@ const review: Ref<string> = ref("")
 
 const reports: Report[] = reactive([])
 
+const audio = new Audio(alertSound)
+// FIXME: 音量調整できるようにする
+audio.volume = 0.3
+
 // タイマーをスタートさせる処理
 const startMainTimer = (onEndTimer?: () => void) => {
   isStartTimer.value = true
@@ -118,6 +124,7 @@ const startMainTimer = (onEndTimer?: () => void) => {
       currentTime.value = 0
       stopMainTimer()
       if (onEndTimer) {
+        audio.play()
         onEndTimer()
       }
     }
