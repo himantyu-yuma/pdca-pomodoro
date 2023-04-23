@@ -18,6 +18,8 @@
     "webfontloader": "^1.0.0"
   },
   "devDependencies": {
+    "@markuplint/vue-parser": "^3.6.1",
+    "@markuplint/vue-spec": "^3.7.0",
     "@types/node": "^18.11.9",
     "@types/webfontloader": "^1.6.35",
     "@vitejs/plugin-vue": "^3.0.3",
