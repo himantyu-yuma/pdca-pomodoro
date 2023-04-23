@@ -1,9 +1,14 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2649f81c-3b08-440c-8d88-85d29e445f68/deploy-status)](https://app.netlify.com/sites/pdca-pomodoro/deploys)
-# pdca-PomodoroTimer
+# :tomato: pdca-PomodoroTimer
 計画と振り返りをするためのポモドーロタイマー
+
 ![image](https://user-images.githubusercontent.com/38606036/233862405-d6ddbc0d-1977-4ba2-904d-14ed0c4483a7.png)
 <!-- もう少しいい感じに使い方書く -->
-## 使い方
+
+## :globe_with_meridians: App URL
+https://pdca-pomodoro.netlify.app/
+
+## :clock1: 使い方
 1. タイマー横のスタートボタンを押す
 
 ![image](https://user-images.githubusercontent.com/38606036/233862641-de23a91a-4cb2-4088-a6e4-e477cdb37780.png)
@@ -32,3 +37,6 @@
 8. 下のEXPORTボタンから、計画と振り返りをダウンロード可能（markdown形式）
 
 ![image](https://user-images.githubusercontent.com/38606036/233862803-e9ee4cde-5fd4-4343-a16f-43da2ef4d6b3.png)
+
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
