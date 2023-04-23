@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2649f81c-3b08-440c-8d88-85d29e445f68/deploy-status)](https://app.netlify.com/sites/pdca-pomodoro/deploys)
 # pdca-PomodoroTimer
 計画と振り返りをするためのポモドーロタイマー
 ![image](https://user-images.githubusercontent.com/38606036/233862405-d6ddbc0d-1977-4ba2-904d-14ed0c4483a7.png)
