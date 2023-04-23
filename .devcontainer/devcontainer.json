@@ -10,7 +10,8 @@
             // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
                 "Vue.volar",
-                "Vue.vscode-typescript-vue-plugin"
+                "Vue.vscode-typescript-vue-plugin",
+                "yusukehirao.vscode-markuplint"
             ]
         }
     }
