@@ -93,7 +93,7 @@ interface Report {
 const PLANNING_TIME = 2 * 60
 const FOCUS_TIME = 20 * 60
 const REVIEW_TIME = 3 * 60
-const BREAK_TIME = 5
+const BREAK_TIME = 5 * 60
 
 // FIXME: 内部状態であるstatusと、ユーザーに見せるものとしてのstatusは分けるべき
 const status: Ref<"Planning" | "Focus" | "Review" | "Break"> = ref("Planning")
