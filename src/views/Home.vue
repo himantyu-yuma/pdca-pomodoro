@@ -44,9 +44,12 @@
       </div>
     </div>
 
-    <div class="text-grey-darken-1">
+    <v-divider></v-divider>
+
+    <div class="text-grey-darken-1 report-container">
       <v-btn @click="handleClickExport" variant="outlined">Export</v-btn>
-      <div v-for="report in reports">
+      <!-- FIXME: ここコンポーネント化できそう -->
+      <v-sheet border rounded v-for="report in reports" class="pa-4">
         <h3 class="text-h5">Iteration {{ report.iteration }}</h3>
         <h4 class="text-h6">Plan</h4>
         <p>
@@ -64,7 +67,7 @@
         <p>
           {{ report.review }}
         </p>
-      </div>
+      </v-sheet>
     </div>
   </div>
 </template>
@@ -84,10 +87,11 @@ interface Report {
 }
 
 // それぞれのデフォルト秒数
+// TODO: 変更可能にしたい
 const PLANNING_TIME = 2 * 60
 const FOCUS_TIME = 20 * 60
 const REVIEW_TIME = 3 * 60
-const BREAK_TIME = 5
+const BREAK_TIME = 5 * 60
 
 // FIXME: 内部状態であるstatusと、ユーザーに見せるものとしてのstatusは分けるべき
 const status: Ref<"Planning" | "Focus" | "Review" | "Break"> = ref("Planning")
@@ -184,6 +188,7 @@ const handleClickNextButton = () => {
 const handleClickExport = () => {
   const now = new Date()
   // マークダウン形式で結果を出力
+  // TODO: リファクタリングしたい
   const markdown = reports.map(report => (
     `# Pomodoro Report ${format(now, "yyyy-MM-dd")}
 ## Iteration ${report.iteration}
@@ -205,6 +210,7 @@ ${report.review}
 }
 </script>
 
+<!-- TODO: スタイルをクラスで付けたりstyleで付けたりしてるのでできるだけ統一したい -->
 <style lang="scss" scoped>
 .timer-container {
   display: flex;
@@ -217,5 +223,12 @@ ${report.review}
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+.report-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem
 }
 </style>
