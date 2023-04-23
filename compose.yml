@@ -1,0 +1,20 @@
+version: '3'
+volumes:
+    modules:
+services:
+    app:
+        build: 
+            context: .
+        restart: always
+        ports:
+            - 3030:3000
+        volumes:
+            - type: volume
+              source: modules
+              target: /app/src/node_modules
+            - type: bind
+              source: ./
+              target: /app/src
+        init: true
+        stdin_open: true
+        tty: true
