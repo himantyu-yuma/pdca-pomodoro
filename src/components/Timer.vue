@@ -8,7 +8,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { Ref } from 'vue';
-import { reactive } from 'vue';
 
 type Props = {
     /**
