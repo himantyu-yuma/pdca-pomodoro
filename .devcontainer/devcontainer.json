@@ -1,0 +1,17 @@
+{
+    "dockerComposeFile": [
+        "../compose.yml"
+    ],
+    "service": "app",
+    "workspaceFolder": "/app/src",
+    "customizations": {
+        // Configure properties specific to VS Code.
+        "vscode": {
+            // Add the IDs of extensions you want installed when the container is created.
+            "extensions": [
+                "Vue.volar",
+                "Vue.vscode-typescript-vue-plugin"
+            ]
+        }
+    }
+}
